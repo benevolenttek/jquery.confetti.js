@@ -1,7 +1,9 @@
 # jquery.confetti.js
-A jquery plugin to show confetti.
+A jQuery plugin to show confetti.
 
-JsFiddle inspiration: http://jsfiddle.net/Javalsu/vxP5q/743/embedded/result/
+JsFiddle inspiration (not a jQuery plugin): http://jsfiddle.net/Javalsu/vxP5q/743/embedded/result/
+
+Plnker Demo of this Repo:  http://plnkr.co/edit/DMHO91
 
 Start:
 ------
