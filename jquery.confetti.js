@@ -55,10 +55,10 @@ $(function() {
         }
     }
 
-    $(document).ready(function () {
+    function init() {
         SetGlobals();
         InitializeButton();
-        InitializeConfetti();
+        // InitializeConfetti();
 
         $(window).resize(function () {
             W = window.innerWidth;
@@ -67,15 +67,18 @@ $(function() {
             canvas.height = H;
         });
 
-    });
+    }
+
+    // $(document).ready(init());
 
     function InitializeButton() {
-        $('#stopButton').click(DeactivateConfetti);
-        $('#startButton').click(RestartConfetti);
+        $('#startConfetti').click(InitializeConfetti);
+        $('#stopConfetti').click(DeactivateConfetti);
+        $('#restartConfetti').click(RestartConfetti);
     }
 
     function SetGlobals() {
-        $('body').append('<canvas id="confettiCanvas" style="position:absolute;top:0;"></canvas>');
+        $('body').append('<canvas id="confettiCanvas" style="position:absolute;top:0;left:0;display:none;"></canvas>');
         canvas = document.getElementById("confettiCanvas");
         ctx = canvas.getContext("2d");
         W = window.innerWidth;
@@ -85,13 +88,14 @@ $(function() {
     }
 
     function InitializeConfetti() {
+        canvas.style.display = 'block';
         particles = [];
         animationComplete = false;
         for (var i = 0; i < mp; i++) {
             var particleColor = particleColors.getColor();
             particles.push(new confettiParticle(particleColor));
         }
-        //StartConfetti();
+        StartConfetti();
     }
 
     function Draw() {
@@ -195,6 +199,7 @@ $(function() {
         animationComplete = true;
         if (ctx == undefined) return;
         ctx.clearRect(0, 0, W, H);
+        canvas.style.display = 'none';
     }
 
     function RestartConfetti() {
@@ -214,8 +219,10 @@ $(function() {
         };
     })();
     
-    this.start = StartConfetti;
+    this.init = init;
+    this.start = InitializeConfetti;
     this.stop = DeactivateConfetti;
     this.restart = RestartConfetti;
   }
+  $.confetti.init();
 });
