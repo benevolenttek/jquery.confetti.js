@@ -2,16 +2,28 @@
 A jquery plugin to show confetti.
 
 Start:
-$.confetti.start();
+------
+
+    $.confetti.start();
+
 or
-<button id="startConfetti"></button>
+
+    <button id="startConfetti"></button>
 
 Stop:
-$.confetti.stop();
+-----
+
+    $.confetti.stop();
+
 or
-<button id="stopConfetti"></button>
+
+    <button id="stopConfetti"></button>
 
 Restart:
-$.confetti.restart();
+--------
+
+    $.confetti.restart();
+
 or
-<button id="restartConfetti"></button>
+
+    <button id="restartConfetti"></button>
