@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
   $.confetti = new function() {
     // globals
     var canvas;
@@ -78,7 +78,7 @@ $(function() {
     }
 
     function SetGlobals() {
-        $('body').append('<canvas id="confettiCanvas" style="position:absolute;top:0;left:0;display:none;"></canvas>');
+        $('body').append('<canvas id="confettiCanvas" style="position:absolute;top:0;left:0;display:none;z-index:99;"></canvas>');
         canvas = document.getElementById("confettiCanvas");
         ctx = canvas.getContext("2d");
         W = window.innerWidth;
@@ -225,4 +225,4 @@ $(function() {
     this.restart = RestartConfetti;
   }
   $.confetti.init();
-});
+}(jQuery));
