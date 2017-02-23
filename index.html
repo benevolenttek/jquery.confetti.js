@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>This is a test page.  Confetti will start in 3 seconds and then stop soon after.</h1>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="jquery.confetti.js"></script>
+    <script>
+        setTimeout(function() {
+          $.confetti.StartConfetti();
+        }, 2000);
+
+        setTimeout(function() {
+          $.confetti.StopConfetti();
+        }, 4000);
+    </script>
+  </body>
+
+</html>
